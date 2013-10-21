@@ -54,10 +54,10 @@ with con:
 							foreign key(tableId) references TableTbl(id))""")
 	# create table: OrderDetailTbl -->forergn key(orderId, menuId)
 	cur.execute("""create table if not exists OrderDetailTbl(
-							id int, 
+							id int auto_increment, 
 							orderId int,
 							menuId int,
-							info varchar(100),
+							num int,
 							remark varchar(200),
 							primary key(id),
 							foreign key(orderId) references OrderTbl(id),
@@ -67,3 +67,4 @@ with con:
 	#cur.executemany("insert into TableTbl(num, flag, description) values(%s, %s, %s)", values)
 	# init table
 	# init menu
+	# init menu_type

@@ -35,7 +35,7 @@ class OrderDaoImpl:
 
 		with self.conn:
 			cur = self.conn.cursor()
-			sql = " insert into OrderdetailTbl(orderId,menuId,num,remark)values(%s,%s,%s,%s) "
+			sql = " insert into OrderDetailTbl(orderId,menuId,num,remark)values(%s,%s,%s,%s) "
 
 			value = [ od.getOrderId(),
 					od.getMenuId(),

@@ -25,7 +25,21 @@ def start_table_test():
 	request = "stb" + stb_str
 	return request
 
-req = start_table_test()
+# orderdetail
+def order_detail_test():
+	print "odt test"
+
+	odt = message_pb2.OrderDetail()
+	odt.menuId = "2"
+	odt.orderId = "9"
+	odt.num = "2"
+	odt.remark = "acid"
+	odt_str = odt.SerializeToString()
+	request = "odt" + odt_str
+	return request
+
+#req = start_table_test()
+req = order_detail_test()
 # send the request
 socket.send(req)
 # show the reply.
