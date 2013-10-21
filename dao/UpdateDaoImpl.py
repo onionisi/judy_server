@@ -5,7 +5,7 @@ from entity.Menu import *
 class UpdateDaoImpl:
 
 	def __init__(self):
-		self.conn = dbutil().openconnection()
+		self.conn = DBUtil().openConnection()
 
 	# 获得菜单列表
 	def getMenuList(self):

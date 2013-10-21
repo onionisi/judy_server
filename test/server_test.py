@@ -67,10 +67,33 @@ def check_table_test():
 
 	return 0
 
+# login
+def login_test():
+	print "login test"
+
+	lgn = message_pb2.Login()
+	lgn.account = "admin"
+	lgn.password = "admin"
+	lgn.Id = "123"
+	lgn.name = "test"
+
+	lgn_str = lgn.SerializeToString()
+	request = "lgn" + lgn_str
+	socket.send(request)
+
+	lng = message_pb2.Login()
+	lng_str = socket.recv()
+	lng.ParseFromString(lng_str)
+
+	print "login Id %d, name %d" % (lng.Id, lng.name)
+
+	return 0
+
 #req = start_table_test()
 #req = order_detail_test()
 #req = change_table_test()
-check_table_test()
+#check_table_test()
+login_test()
 
 ## send the request
 #socket.send(req)

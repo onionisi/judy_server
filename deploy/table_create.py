@@ -16,7 +16,7 @@ with con:
 							password varchar(20), 
 							name varchar(20), 
 							gender varchar(20), 
-							pemission int, 
+							permission int, 
 							remark varchar(200), 
 							primary key(id))""")
 	# create table: MenuTypeTbl

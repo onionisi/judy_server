@@ -5,7 +5,7 @@ from entity.User import *
 class UserDaoImpl:
 	
 	def __init__(self):
-		self.conn = dbutil().openconnection()
+		self.conn = DBUtil().openConnection()
 
 	def login(self, account, password):
 		# 查询SQL语句
@@ -21,10 +21,10 @@ class UserDaoImpl:
 
 			row = cur.fetchone()
 
-			Id = row(0)
-			name = row(3)
-			permission = row(4)
-			remark = row(5)
+			Id = row[0]
+			name = row[3]
+			permission = row[4]
+			remark = row[5]
 			# 封装用户信息
 			u = User()
 			
