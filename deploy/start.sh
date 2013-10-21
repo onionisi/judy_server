@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+SRC_DIR=`pwd`
+
 function dep_detect() {
 	which mysqld > /dev/null
 	if [ $? -ne 0 ]; then
@@ -16,6 +18,6 @@ function dep_detect() {
 
 dep_detect
 
-python2 ./table_create.py  2&> /dev/null
+python2 $SRC_DIR/deploy/table_create.py  2&> /dev/null
 
-python2 ./../judy_server.py
+python2 $SRC_DIR/judy_server.py
