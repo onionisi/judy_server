@@ -3,7 +3,7 @@ import message_pb2
 from dao.CheckTableDaoImpl import *
 from entity.CheckTable import *
 
-def check_table():
+def check_table(value):
 	obj = message_pb2.CheckTable()
 
 	# 实例化CheckTableDao

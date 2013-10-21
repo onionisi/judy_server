@@ -52,10 +52,27 @@ def change_table_test():
 	request = "cgt" + cgt_str
 	return request
 
+# checktable
+def check_table_test():
+	print "ckt test"
+
+	cgt = message_pb2.CheckTable()
+
+	socket.send("ckt")
+	cgt_str = socket.recv()
+	cgt.ParseFromString(cgt_str)
+
+	for sub in cgt.subchecktable:
+		print "table number %d, flag %d" % (sub.num, sub.flag)
+
+	return 0
+
 #req = start_table_test()
 #req = order_detail_test()
-req = change_table_test()
-# send the request
-socket.send(req)
-# show the reply.
-print socket.recv()
+#req = change_table_test()
+check_table_test()
+
+## send the request
+#socket.send(req)
+## show the reply.
+#print socket.recv()

@@ -20,8 +20,8 @@ class CheckTableDaoImpl:
 			rows = cur.fetchall()
 			result = []
 			for row in rows:
-				num = row(0)
-				flag = row(1)
+				num = row[0]
+				flag = row[1]
 
 				ct = CheckTable()
 				ct.setFlag(flag)
