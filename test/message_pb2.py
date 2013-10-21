@@ -12,14 +12,14 @@ from google.protobuf import descriptor_pb2
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='message.proto',
-  package='',
-  serialized_pb='\n\rmessage.proto\"<\n\x05Order\x12\x0e\n\x06\x65ncode\x18\x01 \x02(\x05\x12\x10\n\x05\x63ount\x18\x02 \x01(\x05:\x01\x31\x12\x11\n\x07remarks\x18\x03 \x01(\t:\x00\"\x98\x01\n\x06\x43lient\x12\x0c\n\x04unit\x18\x01 \x02(\x05\x12%\n\x07operate\x18\x02 \x01(\x0e\x32\x0c.Client.CRUD:\x06\x43REATE\x12\x15\n\x05order\x18\x03 \x03(\x0b\x32\x06.Order\"B\n\x04\x43RUD\x12\n\n\x06\x43REATE\x10\x00\x12\x0c\n\x08\x43HECKOUT\x10\x01\x12\x08\n\x04READ\x10\x02\x12\n\n\x06UPDATE\x10\x03\x12\n\n\x06\x44\x45LETE\x10\x04\"\n\n\x08\x65xchange\"S\n\nStartTable\x12\x11\n\torderTime\x18\x01 \x02(\t\x12\x0f\n\x07tableId\x18\x02 \x02(\t\x12\x11\n\tpersonNum\x18\x03 \x02(\t\x12\x0e\n\x06userId\x18\x04 \x01(\t\"K\n\x0bOrderDetail\x12\x0e\n\x06menuId\x18\x01 \x02(\t\x12\x0f\n\x07orderId\x18\x02 \x02(\t\x12\x0b\n\x03num\x18\x03 \x02(\t\x12\x0e\n\x06remark\x18\x04 \x01(\t\"\xd7\x01\n\x03Pay\x12\x1b\n\x06subpay\x18\x01 \x03(\x0b\x32\x0b.Pay.subPay\x1a\xb2\x01\n\x06subPay\x12\x0f\n\x07orderId\x18\x01 \x02(\t\x12\x11\n\torderTime\x18\x02 \x02(\t\x12\x13\n\x0bwaitor_name\x18\x03 \x02(\t\x12\x11\n\tpersonNum\x18\x04 \x02(\t\x12\x0f\n\x07tableId\x18\x05 \x02(\t\x12\x11\n\tdish_name\x18\x06 \x02(\t\x12\x0c\n\x04pric\x18\x07 \x02(\t\x12\x0b\n\x03num\x18\x08 \x02(\t\x12\r\n\x05total\x18\t \x02(\t\x12\x0e\n\x06remark\x18\n \x02(\t\"\n\n\x08PayMoney\"v\n\x0b\x43hangeTable\x12\x33\n\x0esubchangetable\x18\x01 \x03(\x0b\x32\x1b.ChangeTable.subChangeTable\x1a\x32\n\x0esubChangeTable\x12\x0f\n\x07orderId\x18\x01 \x02(\x05\x12\x0f\n\x07tableId\x18\x02 \x02(\x05\"h\n\nUnionTable\x12\x30\n\rsubuniontable\x18\x01 \x03(\x0b\x32\x19.UnionTable.subUnionTable\x1a(\n\rsubUnionTable\x12\n\n\x02Id\x18\x01 \x02(\t\x12\x0b\n\x03num\x18\x02 \x02(\x05\"1\n\x0bUnionTable2\x12\x10\n\x08tableId1\x18\x01 \x02(\x05\x12\x10\n\x08tableId2\x18\x02 \x02(\x05\"j\n\nCheckTable\x12\x30\n\rsubchecktable\x18\x01 \x03(\x0b\x32\x19.CheckTable.subCheckTable\x1a*\n\rsubCheckTable\x12\x0b\n\x03num\x18\x01 \x02(\x05\x12\x0c\n\x04\x66lag\x18\x02 \x02(\x05\"\x91\x01\n\x06Update\x12$\n\tsubupdate\x18\x01 \x03(\x0b\x32\x11.Update.subUpdate\x1a\x61\n\tsubUpdate\x12\n\n\x02Id\x18\x01 \x02(\x05\x12\x0c\n\x04name\x18\x02 \x02(\t\x12\x0b\n\x03pic\x18\x03 \x02(\t\x12\r\n\x05price\x18\x04 \x02(\x05\x12\x0e\n\x06typeId\x18\x05 \x02(\x05\x12\x0e\n\x06remark\x18\x06 \x02(\t\"D\n\x05Login\x12\x0f\n\x07\x61\x63\x63ount\x18\x01 \x02(\t\x12\x10\n\x08password\x18\x02 \x02(\t\x12\n\n\x02id\x18\x03 \x02(\t\x12\x0c\n\x04name\x18\x04 \x02(\t')
+  package='Message',
+  serialized_pb='\n\rmessage.proto\x12\x07Message\"<\n\x05Order\x12\x0e\n\x06\x65ncode\x18\x01 \x02(\x05\x12\x10\n\x05\x63ount\x18\x02 \x01(\x05:\x01\x31\x12\x11\n\x07remarks\x18\x03 \x01(\t:\x00\"\xa8\x01\n\x06\x43lient\x12\x0c\n\x04unit\x18\x01 \x02(\x05\x12-\n\x07operate\x18\x02 \x01(\x0e\x32\x14.Message.Client.CRUD:\x06\x43REATE\x12\x1d\n\x05order\x18\x03 \x03(\x0b\x32\x0e.Message.Order\"B\n\x04\x43RUD\x12\n\n\x06\x43REATE\x10\x00\x12\x0c\n\x08\x43HECKOUT\x10\x01\x12\x08\n\x04READ\x10\x02\x12\n\n\x06UPDATE\x10\x03\x12\n\n\x06\x44\x45LETE\x10\x04\"\n\n\x08\x65xchange\"S\n\nStartTable\x12\x11\n\torderTime\x18\x01 \x02(\t\x12\x0f\n\x07tableId\x18\x02 \x02(\t\x12\x11\n\tpersonNum\x18\x03 \x02(\t\x12\x0e\n\x06userId\x18\x04 \x01(\t\"K\n\x0bOrderDetail\x12\x0e\n\x06menuId\x18\x01 \x02(\t\x12\x0f\n\x07orderId\x18\x02 \x02(\t\x12\x0b\n\x03num\x18\x03 \x02(\t\x12\x0e\n\x06remark\x18\x04 \x01(\t\"\xdf\x01\n\x03Pay\x12#\n\x06subpay\x18\x01 \x03(\x0b\x32\x13.Message.Pay.subPay\x1a\xb2\x01\n\x06subPay\x12\x0f\n\x07orderId\x18\x01 \x02(\t\x12\x11\n\torderTime\x18\x02 \x02(\t\x12\x13\n\x0bwaitor_name\x18\x03 \x02(\t\x12\x11\n\tpersonNum\x18\x04 \x02(\t\x12\x0f\n\x07tableId\x18\x05 \x02(\t\x12\x11\n\tdish_name\x18\x06 \x02(\t\x12\x0c\n\x04pric\x18\x07 \x02(\t\x12\x0b\n\x03num\x18\x08 \x02(\t\x12\r\n\x05total\x18\t \x02(\t\x12\x0e\n\x06remark\x18\n \x02(\t\"\n\n\x08PayMoney\"/\n\x0b\x43hangeTable\x12\x0f\n\x07orderId\x18\x01 \x02(\x05\x12\x0f\n\x07tableId\x18\x02 \x02(\x05\"p\n\nUnionTable\x12\x38\n\rsubuniontable\x18\x01 \x03(\x0b\x32!.Message.UnionTable.subUnionTable\x1a(\n\rsubUnionTable\x12\n\n\x02Id\x18\x01 \x02(\t\x12\x0b\n\x03num\x18\x02 \x02(\x05\"1\n\x0bUnionTable2\x12\x10\n\x08tableId1\x18\x01 \x02(\x05\x12\x10\n\x08tableId2\x18\x02 \x02(\x05\"r\n\nCheckTable\x12\x38\n\rsubchecktable\x18\x01 \x03(\x0b\x32!.Message.CheckTable.subCheckTable\x1a*\n\rsubCheckTable\x12\x0b\n\x03num\x18\x01 \x02(\x05\x12\x0c\n\x04\x66lag\x18\x02 \x02(\x05\"\x99\x01\n\x06Update\x12,\n\tsubupdate\x18\x01 \x03(\x0b\x32\x19.Message.Update.subUpdate\x1a\x61\n\tsubUpdate\x12\n\n\x02Id\x18\x01 \x02(\x05\x12\x0c\n\x04name\x18\x02 \x02(\t\x12\x0b\n\x03pic\x18\x03 \x02(\t\x12\r\n\x05price\x18\x04 \x02(\x05\x12\x0e\n\x06typeId\x18\x05 \x02(\x05\x12\x0e\n\x06remark\x18\x06 \x02(\t\"D\n\x05Login\x12\x0f\n\x07\x61\x63\x63ount\x18\x01 \x02(\t\x12\x10\n\x08password\x18\x02 \x02(\t\x12\n\n\x02id\x18\x03 \x02(\t\x12\x0c\n\x04name\x18\x04 \x02(\tB\x1d\n\x12onionisi.judy.toolB\x07Message')
 
 
 
 _CLIENT_CRUD = _descriptor.EnumDescriptor(
   name='CRUD',
-  full_name='Client.CRUD',
+  full_name='Message.Client.CRUD',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -46,34 +46,34 @@ _CLIENT_CRUD = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=166,
-  serialized_end=232,
+  serialized_start=191,
+  serialized_end=257,
 )
 
 
 _ORDER = _descriptor.Descriptor(
   name='Order',
-  full_name='Order',
+  full_name='Message.Order',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='encode', full_name='Order.encode', index=0,
+      name='encode', full_name='Message.Order.encode', index=0,
       number=1, type=5, cpp_type=1, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='count', full_name='Order.count', index=1,
+      name='count', full_name='Message.Order.count', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=True, default_value=1,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='remarks', full_name='Order.remarks', index=2,
+      name='remarks', full_name='Message.Order.remarks', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=True, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
@@ -88,34 +88,34 @@ _ORDER = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=17,
-  serialized_end=77,
+  serialized_start=26,
+  serialized_end=86,
 )
 
 
 _CLIENT = _descriptor.Descriptor(
   name='Client',
-  full_name='Client',
+  full_name='Message.Client',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='unit', full_name='Client.unit', index=0,
+      name='unit', full_name='Message.Client.unit', index=0,
       number=1, type=5, cpp_type=1, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='operate', full_name='Client.operate', index=1,
+      name='operate', full_name='Message.Client.operate', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=True, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='order', full_name='Client.order', index=2,
+      name='order', full_name='Message.Client.order', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -131,14 +131,14 @@ _CLIENT = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=80,
-  serialized_end=232,
+  serialized_start=89,
+  serialized_end=257,
 )
 
 
 _EXCHANGE = _descriptor.Descriptor(
   name='exchange',
-  full_name='exchange',
+  full_name='Message.exchange',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -152,41 +152,41 @@ _EXCHANGE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=234,
-  serialized_end=244,
+  serialized_start=259,
+  serialized_end=269,
 )
 
 
 _STARTTABLE = _descriptor.Descriptor(
   name='StartTable',
-  full_name='StartTable',
+  full_name='Message.StartTable',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='orderTime', full_name='StartTable.orderTime', index=0,
+      name='orderTime', full_name='Message.StartTable.orderTime', index=0,
       number=1, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='tableId', full_name='StartTable.tableId', index=1,
+      name='tableId', full_name='Message.StartTable.tableId', index=1,
       number=2, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='personNum', full_name='StartTable.personNum', index=2,
+      name='personNum', full_name='Message.StartTable.personNum', index=2,
       number=3, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='userId', full_name='StartTable.userId', index=3,
+      name='userId', full_name='Message.StartTable.userId', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
@@ -201,41 +201,41 @@ _STARTTABLE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=246,
-  serialized_end=329,
+  serialized_start=271,
+  serialized_end=354,
 )
 
 
 _ORDERDETAIL = _descriptor.Descriptor(
   name='OrderDetail',
-  full_name='OrderDetail',
+  full_name='Message.OrderDetail',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='menuId', full_name='OrderDetail.menuId', index=0,
+      name='menuId', full_name='Message.OrderDetail.menuId', index=0,
       number=1, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='orderId', full_name='OrderDetail.orderId', index=1,
+      name='orderId', full_name='Message.OrderDetail.orderId', index=1,
       number=2, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='num', full_name='OrderDetail.num', index=2,
+      name='num', full_name='Message.OrderDetail.num', index=2,
       number=3, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='remark', full_name='OrderDetail.remark', index=3,
+      name='remark', full_name='Message.OrderDetail.remark', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
@@ -250,83 +250,83 @@ _ORDERDETAIL = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=331,
-  serialized_end=406,
+  serialized_start=356,
+  serialized_end=431,
 )
 
 
 _PAY_SUBPAY = _descriptor.Descriptor(
   name='subPay',
-  full_name='Pay.subPay',
+  full_name='Message.Pay.subPay',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='orderId', full_name='Pay.subPay.orderId', index=0,
+      name='orderId', full_name='Message.Pay.subPay.orderId', index=0,
       number=1, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='orderTime', full_name='Pay.subPay.orderTime', index=1,
+      name='orderTime', full_name='Message.Pay.subPay.orderTime', index=1,
       number=2, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='waitor_name', full_name='Pay.subPay.waitor_name', index=2,
+      name='waitor_name', full_name='Message.Pay.subPay.waitor_name', index=2,
       number=3, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='personNum', full_name='Pay.subPay.personNum', index=3,
+      name='personNum', full_name='Message.Pay.subPay.personNum', index=3,
       number=4, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='tableId', full_name='Pay.subPay.tableId', index=4,
+      name='tableId', full_name='Message.Pay.subPay.tableId', index=4,
       number=5, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='dish_name', full_name='Pay.subPay.dish_name', index=5,
+      name='dish_name', full_name='Message.Pay.subPay.dish_name', index=5,
       number=6, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='pric', full_name='Pay.subPay.pric', index=6,
+      name='pric', full_name='Message.Pay.subPay.pric', index=6,
       number=7, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='num', full_name='Pay.subPay.num', index=7,
+      name='num', full_name='Message.Pay.subPay.num', index=7,
       number=8, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='total', full_name='Pay.subPay.total', index=8,
+      name='total', full_name='Message.Pay.subPay.total', index=8,
       number=9, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='remark', full_name='Pay.subPay.remark', index=9,
+      name='remark', full_name='Message.Pay.subPay.remark', index=9,
       number=10, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
@@ -341,19 +341,19 @@ _PAY_SUBPAY = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=446,
-  serialized_end=624,
+  serialized_start=479,
+  serialized_end=657,
 )
 
 _PAY = _descriptor.Descriptor(
   name='Pay',
-  full_name='Pay',
+  full_name='Message.Pay',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='subpay', full_name='Pay.subpay', index=0,
+      name='subpay', full_name='Message.Pay.subpay', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -368,14 +368,14 @@ _PAY = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=409,
-  serialized_end=624,
+  serialized_start=434,
+  serialized_end=657,
 )
 
 
 _PAYMONEY = _descriptor.Descriptor(
   name='PayMoney',
-  full_name='PayMoney',
+  full_name='Message.PayMoney',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -389,27 +389,27 @@ _PAYMONEY = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=626,
-  serialized_end=636,
+  serialized_start=659,
+  serialized_end=669,
 )
 
 
-_CHANGETABLE_SUBCHANGETABLE = _descriptor.Descriptor(
-  name='subChangeTable',
-  full_name='ChangeTable.subChangeTable',
+_CHANGETABLE = _descriptor.Descriptor(
+  name='ChangeTable',
+  full_name='Message.ChangeTable',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='orderId', full_name='ChangeTable.subChangeTable.orderId', index=0,
+      name='orderId', full_name='Message.ChangeTable.orderId', index=0,
       number=1, type=5, cpp_type=1, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='tableId', full_name='ChangeTable.subChangeTable.tableId', index=1,
+      name='tableId', full_name='Message.ChangeTable.tableId', index=1,
       number=2, type=5, cpp_type=1, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -424,54 +424,27 @@ _CHANGETABLE_SUBCHANGETABLE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=706,
-  serialized_end=756,
-)
-
-_CHANGETABLE = _descriptor.Descriptor(
-  name='ChangeTable',
-  full_name='ChangeTable',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='subchangetable', full_name='ChangeTable.subchangetable', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[_CHANGETABLE_SUBCHANGETABLE, ],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  extension_ranges=[],
-  serialized_start=638,
-  serialized_end=756,
+  serialized_start=671,
+  serialized_end=718,
 )
 
 
 _UNIONTABLE_SUBUNIONTABLE = _descriptor.Descriptor(
   name='subUnionTable',
-  full_name='UnionTable.subUnionTable',
+  full_name='Message.UnionTable.subUnionTable',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='Id', full_name='UnionTable.subUnionTable.Id', index=0,
+      name='Id', full_name='Message.UnionTable.subUnionTable.Id', index=0,
       number=1, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='num', full_name='UnionTable.subUnionTable.num', index=1,
+      name='num', full_name='Message.UnionTable.subUnionTable.num', index=1,
       number=2, type=5, cpp_type=1, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -486,19 +459,19 @@ _UNIONTABLE_SUBUNIONTABLE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=822,
-  serialized_end=862,
+  serialized_start=792,
+  serialized_end=832,
 )
 
 _UNIONTABLE = _descriptor.Descriptor(
   name='UnionTable',
-  full_name='UnionTable',
+  full_name='Message.UnionTable',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='subuniontable', full_name='UnionTable.subuniontable', index=0,
+      name='subuniontable', full_name='Message.UnionTable.subuniontable', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -513,27 +486,27 @@ _UNIONTABLE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=758,
-  serialized_end=862,
+  serialized_start=720,
+  serialized_end=832,
 )
 
 
 _UNIONTABLE2 = _descriptor.Descriptor(
   name='UnionTable2',
-  full_name='UnionTable2',
+  full_name='Message.UnionTable2',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='tableId1', full_name='UnionTable2.tableId1', index=0,
+      name='tableId1', full_name='Message.UnionTable2.tableId1', index=0,
       number=1, type=5, cpp_type=1, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='tableId2', full_name='UnionTable2.tableId2', index=1,
+      name='tableId2', full_name='Message.UnionTable2.tableId2', index=1,
       number=2, type=5, cpp_type=1, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -548,27 +521,27 @@ _UNIONTABLE2 = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=864,
-  serialized_end=913,
+  serialized_start=834,
+  serialized_end=883,
 )
 
 
 _CHECKTABLE_SUBCHECKTABLE = _descriptor.Descriptor(
   name='subCheckTable',
-  full_name='CheckTable.subCheckTable',
+  full_name='Message.CheckTable.subCheckTable',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='num', full_name='CheckTable.subCheckTable.num', index=0,
+      name='num', full_name='Message.CheckTable.subCheckTable.num', index=0,
       number=1, type=5, cpp_type=1, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='flag', full_name='CheckTable.subCheckTable.flag', index=1,
+      name='flag', full_name='Message.CheckTable.subCheckTable.flag', index=1,
       number=2, type=5, cpp_type=1, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -583,19 +556,19 @@ _CHECKTABLE_SUBCHECKTABLE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=979,
-  serialized_end=1021,
+  serialized_start=957,
+  serialized_end=999,
 )
 
 _CHECKTABLE = _descriptor.Descriptor(
   name='CheckTable',
-  full_name='CheckTable',
+  full_name='Message.CheckTable',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='subchecktable', full_name='CheckTable.subchecktable', index=0,
+      name='subchecktable', full_name='Message.CheckTable.subchecktable', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -610,55 +583,55 @@ _CHECKTABLE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=915,
-  serialized_end=1021,
+  serialized_start=885,
+  serialized_end=999,
 )
 
 
 _UPDATE_SUBUPDATE = _descriptor.Descriptor(
   name='subUpdate',
-  full_name='Update.subUpdate',
+  full_name='Message.Update.subUpdate',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='Id', full_name='Update.subUpdate.Id', index=0,
+      name='Id', full_name='Message.Update.subUpdate.Id', index=0,
       number=1, type=5, cpp_type=1, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='name', full_name='Update.subUpdate.name', index=1,
+      name='name', full_name='Message.Update.subUpdate.name', index=1,
       number=2, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='pic', full_name='Update.subUpdate.pic', index=2,
+      name='pic', full_name='Message.Update.subUpdate.pic', index=2,
       number=3, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='price', full_name='Update.subUpdate.price', index=3,
+      name='price', full_name='Message.Update.subUpdate.price', index=3,
       number=4, type=5, cpp_type=1, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='typeId', full_name='Update.subUpdate.typeId', index=4,
+      name='typeId', full_name='Message.Update.subUpdate.typeId', index=4,
       number=5, type=5, cpp_type=1, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='remark', full_name='Update.subUpdate.remark', index=5,
+      name='remark', full_name='Message.Update.subUpdate.remark', index=5,
       number=6, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
@@ -673,19 +646,19 @@ _UPDATE_SUBUPDATE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1072,
-  serialized_end=1169,
+  serialized_start=1058,
+  serialized_end=1155,
 )
 
 _UPDATE = _descriptor.Descriptor(
   name='Update',
-  full_name='Update',
+  full_name='Message.Update',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='subupdate', full_name='Update.subupdate', index=0,
+      name='subupdate', full_name='Message.Update.subupdate', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -700,41 +673,41 @@ _UPDATE = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1024,
-  serialized_end=1169,
+  serialized_start=1002,
+  serialized_end=1155,
 )
 
 
 _LOGIN = _descriptor.Descriptor(
   name='Login',
-  full_name='Login',
+  full_name='Message.Login',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='account', full_name='Login.account', index=0,
+      name='account', full_name='Message.Login.account', index=0,
       number=1, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='password', full_name='Login.password', index=1,
+      name='password', full_name='Message.Login.password', index=1,
       number=2, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='id', full_name='Login.id', index=2,
+      name='id', full_name='Message.Login.id', index=2,
       number=3, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='name', full_name='Login.name', index=3,
+      name='name', full_name='Message.Login.name', index=3,
       number=4, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
@@ -749,8 +722,8 @@ _LOGIN = _descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1171,
-  serialized_end=1239,
+  serialized_start=1157,
+  serialized_end=1225,
 )
 
 _CLIENT.fields_by_name['operate'].enum_type = _CLIENT_CRUD
@@ -758,8 +731,6 @@ _CLIENT.fields_by_name['order'].message_type = _ORDER
 _CLIENT_CRUD.containing_type = _CLIENT;
 _PAY_SUBPAY.containing_type = _PAY;
 _PAY.fields_by_name['subpay'].message_type = _PAY_SUBPAY
-_CHANGETABLE_SUBCHANGETABLE.containing_type = _CHANGETABLE;
-_CHANGETABLE.fields_by_name['subchangetable'].message_type = _CHANGETABLE_SUBCHANGETABLE
 _UNIONTABLE_SUBUNIONTABLE.containing_type = _UNIONTABLE;
 _UNIONTABLE.fields_by_name['subuniontable'].message_type = _UNIONTABLE_SUBUNIONTABLE
 _CHECKTABLE_SUBCHECKTABLE.containing_type = _CHECKTABLE;
@@ -784,31 +755,31 @@ class Order(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _ORDER
 
-  # @@protoc_insertion_point(class_scope:Order)
+  # @@protoc_insertion_point(class_scope:Message.Order)
 
 class Client(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _CLIENT
 
-  # @@protoc_insertion_point(class_scope:Client)
+  # @@protoc_insertion_point(class_scope:Message.Client)
 
 class exchange(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _EXCHANGE
 
-  # @@protoc_insertion_point(class_scope:exchange)
+  # @@protoc_insertion_point(class_scope:Message.exchange)
 
 class StartTable(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _STARTTABLE
 
-  # @@protoc_insertion_point(class_scope:StartTable)
+  # @@protoc_insertion_point(class_scope:Message.StartTable)
 
 class OrderDetail(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _ORDERDETAIL
 
-  # @@protoc_insertion_point(class_scope:OrderDetail)
+  # @@protoc_insertion_point(class_scope:Message.OrderDetail)
 
 class Pay(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
@@ -817,28 +788,22 @@ class Pay(_message.Message):
     __metaclass__ = _reflection.GeneratedProtocolMessageType
     DESCRIPTOR = _PAY_SUBPAY
 
-    # @@protoc_insertion_point(class_scope:Pay.subPay)
+    # @@protoc_insertion_point(class_scope:Message.Pay.subPay)
   DESCRIPTOR = _PAY
 
-  # @@protoc_insertion_point(class_scope:Pay)
+  # @@protoc_insertion_point(class_scope:Message.Pay)
 
 class PayMoney(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _PAYMONEY
 
-  # @@protoc_insertion_point(class_scope:PayMoney)
+  # @@protoc_insertion_point(class_scope:Message.PayMoney)
 
 class ChangeTable(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
-
-  class subChangeTable(_message.Message):
-    __metaclass__ = _reflection.GeneratedProtocolMessageType
-    DESCRIPTOR = _CHANGETABLE_SUBCHANGETABLE
-
-    # @@protoc_insertion_point(class_scope:ChangeTable.subChangeTable)
   DESCRIPTOR = _CHANGETABLE
 
-  # @@protoc_insertion_point(class_scope:ChangeTable)
+  # @@protoc_insertion_point(class_scope:Message.ChangeTable)
 
 class UnionTable(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
@@ -847,16 +812,16 @@ class UnionTable(_message.Message):
     __metaclass__ = _reflection.GeneratedProtocolMessageType
     DESCRIPTOR = _UNIONTABLE_SUBUNIONTABLE
 
-    # @@protoc_insertion_point(class_scope:UnionTable.subUnionTable)
+    # @@protoc_insertion_point(class_scope:Message.UnionTable.subUnionTable)
   DESCRIPTOR = _UNIONTABLE
 
-  # @@protoc_insertion_point(class_scope:UnionTable)
+  # @@protoc_insertion_point(class_scope:Message.UnionTable)
 
 class UnionTable2(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _UNIONTABLE2
 
-  # @@protoc_insertion_point(class_scope:UnionTable2)
+  # @@protoc_insertion_point(class_scope:Message.UnionTable2)
 
 class CheckTable(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
@@ -865,10 +830,10 @@ class CheckTable(_message.Message):
     __metaclass__ = _reflection.GeneratedProtocolMessageType
     DESCRIPTOR = _CHECKTABLE_SUBCHECKTABLE
 
-    # @@protoc_insertion_point(class_scope:CheckTable.subCheckTable)
+    # @@protoc_insertion_point(class_scope:Message.CheckTable.subCheckTable)
   DESCRIPTOR = _CHECKTABLE
 
-  # @@protoc_insertion_point(class_scope:CheckTable)
+  # @@protoc_insertion_point(class_scope:Message.CheckTable)
 
 class Update(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
@@ -877,16 +842,18 @@ class Update(_message.Message):
     __metaclass__ = _reflection.GeneratedProtocolMessageType
     DESCRIPTOR = _UPDATE_SUBUPDATE
 
-    # @@protoc_insertion_point(class_scope:Update.subUpdate)
+    # @@protoc_insertion_point(class_scope:Message.Update.subUpdate)
   DESCRIPTOR = _UPDATE
 
-  # @@protoc_insertion_point(class_scope:Update)
+  # @@protoc_insertion_point(class_scope:Message.Update)
 
 class Login(_message.Message):
   __metaclass__ = _reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _LOGIN
 
-  # @@protoc_insertion_point(class_scope:Login)
+  # @@protoc_insertion_point(class_scope:Message.Login)
 
 
+DESCRIPTOR.has_options = True
+DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), '\n\022onionisi.judy.toolB\007Message')
 # @@protoc_insertion_point(module_scope)

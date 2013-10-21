@@ -32,7 +32,7 @@ class ChangeTableDaoImpl:
 			#事务的特性1、原子性的手动提交
 			conn.commit()
 
-			cursor.close()
+			cur.close()
 			conn.close()
 
 		except mdb.Error, e:
