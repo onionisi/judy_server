@@ -4,7 +4,7 @@ from entity.UnionTable import *
 
 class UnionTableDaoImpl:
 	
-	def __init(self):
+	def __init__(self):
 		self.conn = DBUtil().openConnection()
 
 	def getTableList(self):

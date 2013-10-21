@@ -45,4 +45,4 @@ while True:
 	reply = handler(extra)
 
     #  Send reply back to client
-	socket.send(reply)
+	socket.send(str(reply))

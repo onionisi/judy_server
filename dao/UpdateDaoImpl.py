@@ -4,7 +4,7 @@ from entity.Menu import *
 
 class UpdateDaoImpl:
 
-	def __init(self):
+	def __init__(self):
 		self.conn = dbutil().openconnection()
 
 	# 获得菜单列表

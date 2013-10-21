@@ -3,7 +3,7 @@ import MySQLdb as mdb
 from DBUtil import *
 
 class ChangeTableDaoImpl:
-	def __init(self):
+	def __init__(self):
 		self.util = DBUtil()
 
 	def changeTable(self, orderId, tableId):

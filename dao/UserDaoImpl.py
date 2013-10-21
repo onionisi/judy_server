@@ -4,13 +4,13 @@ from entity.User import *
 
 class UserDaoImpl:
 	
-	def __init(self):
+	def __init__(self):
 		self.conn = dbutil().openconnection()
 
 	def login(self, account, password):
 		# 查询SQL语句
 		sql = " select id,account,password,name,permission,remark "+\
-						" from userTbl "+\
+						" from UserTbl "+\
 						" where account=%s and password=%s "
 		with self.conn:
 			cur = self.conn.cursor()

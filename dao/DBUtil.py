@@ -5,8 +5,8 @@ class DBUtil:
 	def __init__(self):
 		self.host = 'localhost'
 		self.username = 'root'
-		self.password = 'wd'
-		self.db = 'python'
+		self.password = ''
+		self.db = 'cook'
 	
 	# close the db
 	def closeConn(self, conn):
@@ -14,5 +14,5 @@ class DBUtil:
 	
 	# open the db
 	def openConnection(self):
-		conn = mdb.connect(self.host, self.username, self.password)
+		conn = mdb.connect(self.host, self.username, self.password, self.db)
 		return conn

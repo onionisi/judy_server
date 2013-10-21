@@ -4,13 +4,13 @@ from entity.CheckTable import *
 
 class CheckTableDaoImpl:
 
-	def __init(self):
+	def __init__(self):
 		self.conn = DBUtil().openConnection()
 
 	# 获得餐桌列表
 	def getTableList(self):
 		# 查询SQL语句
-		sql =" select num,flag from tableTbl"
+		sql =" select num,flag from TableTbl"
 		with self.conn:
 			cur = self.conn.cursor()
 

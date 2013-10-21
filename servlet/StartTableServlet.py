@@ -11,7 +11,7 @@ def start_table(obj):
 	# 点餐时间
 	orderTime = msg.orderTime
 	# 操作员编号
-	#userId = msg.userId
+	userId = msg.userId
 	# 桌号
 	tableId = msg.tableId
 	# 人数
@@ -27,7 +27,7 @@ def start_table(obj):
 	o.setUserId(userId)
 	o.setTableId(tableId)
 	# 返回订单ID
-	Id = dao.saveORder(o)
+	Id = dao.saveOrder(o)
 	
 	# 更新餐桌状态为 有人
 	dao.updateTableStatus(tableId)

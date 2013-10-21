@@ -5,7 +5,7 @@ from entity.QueryOrderDetail import *
 # coding: utf-8
 
 class PayDaoImpl:
-	def __init(self):
+	def __init__(self):
 		self.conn = DBUtil().openConnection()
 	
 	# 根据订单编号，查询订单信息
@@ -18,8 +18,8 @@ class PayDaoImpl:
 					 	ut.`name`,
 					 	ot.`personNum`,
 					 	ot.`tableId` 
-					 	from orderTbl as ot
-					 	left join userTbl as ut on ot.`userID` = ut.id
+					 	from OrderTbl as ot
+					 	left join UserTbl as ut on ot.`userID` = ut.id
 					 	where ot.`id`=%s """
 			# 执行查询
 			result = cur.execute(sql, Id)  
@@ -54,8 +54,8 @@ class PayDaoImpl:
 					odt.`num`, 
 					mt.price*odt.num as total, 
 					odt.`remark` 
-					from orderdetailTbl as odt 
-					left join menuTbl as mt on odt.`menuId` = mt.id 
+					from OrderdetailTbl as odt 
+					left join MenuTbl as mt on odt.`menuId` = mt.id 
 					where odt.`orderId`= %s
 		
 					union 
@@ -65,8 +65,8 @@ class PayDaoImpl:
 					'',
 					sum(mt.price*odt.num) as total1,
 					'' 
-					from orderdetailTbl as odt
-					left join menuTbl as mt on odt.`menuId` = mt.id
+					from OrderdetailTbl as odt
+					left join MenuTbl as mt on odt.`menuId` = mt.id
 					where odt.`orderId`= %s """
 		
 			# 设置查询参数
