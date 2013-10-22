@@ -89,11 +89,20 @@ def login_test():
 
 	return 0
 
+# Pay
+def pay_test():
+	print "pay test"
+	
+	request = "pay" + "9"
+	socket.send(request)
+	print socket.recv()
+
 #req = start_table_test()
 #req = order_detail_test()
 #req = change_table_test()
 #check_table_test()
-login_test()
+#login_test()
+pay_test()
 
 ## send the request
 #socket.send(req)

@@ -13,6 +13,8 @@ class PayDaoImpl:
 
 		# 获得连接
 		with self.conn:
+			cur = self.conn.cursor()
+
 			# 查询SQL语句
 			sql =""" 	select ot.`orderTime`,
 					 	ut.`name`,
@@ -28,10 +30,10 @@ class PayDaoImpl:
 			if (result == 1):
 				# 获得订单信息
 				row = cur.fetchone()
-				orderTime = row(0)
-				userName  = row(1)
-				personNum = row(2)
-				tableId   = row(3)
+				orderTime = row[0]
+				userName  = row[1]
+				personNum = row[2]
+				tableId   = row[3]
 
 				qo = QueryOrder()
 				qo.setName(userName)
@@ -48,13 +50,14 @@ class PayDaoImpl:
 
 		# 获得连接
 		with self.conn:
+			cur = self.conn.cursor()
 			# 查询SQL语句
 		 	sql ="""select mt.`name`,
 					mt.`price`, 
 					odt.`num`, 
 					mt.price*odt.num as total, 
 					odt.`remark` 
-					from OrderdetailTbl as odt 
+					from OrderDetailTbl as odt 
 					left join MenuTbl as mt on odt.`menuId` = mt.id 
 					where odt.`orderId`= %s
 		
@@ -65,25 +68,25 @@ class PayDaoImpl:
 					'',
 					sum(mt.price*odt.num) as total1,
 					'' 
-					from OrderdetailTbl as odt
+					from OrderDetailTbl as odt
 					left join MenuTbl as mt on odt.`menuId` = mt.id
 					where odt.`orderId`= %s """
 		
 			# 设置查询参数
 			values = [ Id, Id ]
 			# 执行查询
-			rs = cur.execute(sql, value)  
+			rs = cur.execute(sql, values)  
 			# 判断订单详细
 			result = []
 			rows = cur.fetchall()
 
 			for row in rows:
 				# 获得订单详细信息
-				name = row(0)
-				price = row(1)
-				num = row(2)
-				total = row(3)
-				remark = row(4)
+				name = row[0]
+				price = row[1]
+				num = row[2]
+				total = row[3]
+				remark = row[4]
 				
 				qod = QueryOrderDetail()
 				

@@ -23,8 +23,8 @@ def pay(Id):
 				"<tr><td>" + Id + "</td>" +\
 				"<td>" + qo.getOrderTime() + "</td>" +\
 				"<td>" + qo.getName() + "</td>" +\
-				"<td>" + qo.getPersonNum() + "</td>" +\
-				"<td>" + qo.getTableId() + "</td></tr>"
+				"<td>" + str(qo.getPersonNum()) + "</td>" +\
+				"<td>" + str(qo.getTableId()) + "</td></tr>"
 			
 		content ="<tr><th>菜名</th>" +\
 				"<th>价格</th>" +\
@@ -40,13 +40,13 @@ def pay(Id):
 			remark = qod.getRemark()
 			
 			content += "<tr><td>" + name + "</td>" +\
-				"<td>" + price + "</td>" +\
-				"<td>" + num + "</td>" +\
-				"<td>" + total + "</td>" +\
+				"<td>" + str(price) + "</td>" +\
+				"<td>" + str(num) + "</td>" +\
+				"<td>" + str(total) + "</td>" +\
 				"<td>" + remark + "</td></tr>"
 			
 		end = "</table>  </BODY>\n</HTML>\n"
 
-		msg = head + body + line + content 
+		msg = head + body + line + content + end
 
 		return msg
