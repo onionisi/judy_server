@@ -108,6 +108,7 @@ class PayDaoImpl:
 
 		# 获得连接
 		with self.conn:
+			cur = self.conn.cursor()
 			# 查询SQL语句
 		 	sql =" update OrderTbl set isPay=1 where id = %s"
 			# 执行更新

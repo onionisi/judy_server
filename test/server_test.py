@@ -97,12 +97,21 @@ def pay_test():
 	socket.send(request)
 	print socket.recv()
 
+# Pay_money
+def pay_money_test():
+	print "pay_money test"
+	
+	request = "pmy" + "9"
+	socket.send(request)
+	print socket.recv()
+
 #req = start_table_test()
 #req = order_detail_test()
 #req = change_table_test()
 #check_table_test()
 #login_test()
-pay_test()
+#pay_test()
+pay_money_test()
 
 ## send the request
 #socket.send(req)
