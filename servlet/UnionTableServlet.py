@@ -4,7 +4,7 @@ from dao.UnionTableDaoImpl import *
 from entity.Menu import *
 from entity.UnionTable import *
 
-def union_table():
+def union_table(arg):
 	dao = UnionTableDaoImpl()
 	
 	tables = dao.getTableList()
@@ -13,8 +13,8 @@ def union_table():
 	start = "<tablelist>\n"
 
 	for ut in tables:
-		start += "<table>\n<id>" + ut.getId() + \
-			"</id>\n<num>" + ut.getNum() + \
+		start += "<table>\n<id>" + str(ut.getId()) + \
+			"</id>\n<num>" + str(ut.getNum()) + \
 			"</num>\n</table>\n"
 		
 	end = "</tablelist>\n"

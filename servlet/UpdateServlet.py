@@ -2,7 +2,7 @@
 from dao.UpdateDaoImpl import *
 from entity.Menu import *
 
-def update():
+def update(arg):
 	# 实例化dao
 	dao = UpdateDaoImpl()
 	# 获得菜谱列表

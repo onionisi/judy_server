@@ -20,8 +20,8 @@ class UnionTableDaoImpl:
 			rows = cur.fetchall()
 			for row in rows:
 				# 获得菜单信息
-				Id = row(0)
-				num = row(1)
+				Id = row[0]
+				num = row[1]
 				
 				ut = UnionTable()
 				ut.setId(Id)

@@ -89,19 +89,29 @@ def login_test():
 
 	return 0
 
-# Pay
+# pay
 def pay_test():
 	print "pay test"
 	
+	# orderId should exit
 	request = "pay" + "9"
 	socket.send(request)
 	print socket.recv()
 
-# Pay_money
+# pay_money
 def pay_money_test():
 	print "pay_money test"
 	
+	# orderId should exit
 	request = "pmy" + "9"
+	socket.send(request)
+	print socket.recv()
+
+# union_table
+def union_table_test():
+	print "union_table test"
+	
+	request = "utb"
 	socket.send(request)
 	print socket.recv()
 
@@ -111,7 +121,8 @@ def pay_money_test():
 #check_table_test()
 #login_test()
 #pay_test()
-pay_money_test()
+#pay_money_test()
+union_table_test()
 
 ## send the request
 #socket.send(req)
