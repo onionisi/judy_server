@@ -1,11 +1,17 @@
 #coding=utf-8
+import message_pb2
 from dao.UnionTableDaoImpl import *
 
-def union_table2(arg):
+def union_table2(obj):
 		
-	tableId1 = request.getParameter("tableId1")
-	tableId2 = request.getParameter("tableId2")
+	msg = message_pb2.UnionTable2()
+	msg.ParseFromString(obj)
+
+	tableId1 = msg.tableId1
+	tableId2 = msg.tableId2
 	
 	dao = UnionTableDaoImpl()
 	
 	dao.updateStatus(tableId1, tableId2)
+
+	return "union success"

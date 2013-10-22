@@ -18,6 +18,10 @@ function dep_detect() {
 
 dep_detect
 
+# create MenuTbl|MenuTypeTbl|OrderDetailTbl|OrderTbl|TableTbl|UserTbl 
 python2 $SRC_DIR/deploy/table_create.py  2&> /dev/null
+# create procedure
+mysql -u root -D cook < unite_proc.sql
 
+# start server
 python2 $SRC_DIR/judy_server.py

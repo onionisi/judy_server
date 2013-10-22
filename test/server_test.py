@@ -107,11 +107,24 @@ def pay_money_test():
 	socket.send(request)
 	print socket.recv()
 
-# union_table
+# union_table for query
 def union_table_test():
 	print "union_table test"
 	
 	request = "utb"
+	socket.send(request)
+	print socket.recv()
+
+# union_table2 for unit
+def union_table2_test():
+	print "union_table2 test"
+	
+	ut2 = message_pb2.UnionTable2()
+	ut2.tableId1 = 6
+	ut2.tableId2 = 7
+
+	ut2_str = ut2.SerializeToString()
+	request = "ut2" + ut2_str
 	socket.send(request)
 	print socket.recv()
 
@@ -122,7 +135,8 @@ def union_table_test():
 #login_test()
 #pay_test()
 #pay_money_test()
-union_table_test()
+#union_table_test()
+union_table2_test()
 
 ## send the request
 #socket.send(req)
