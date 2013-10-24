@@ -15,11 +15,11 @@ def update(arg):
 
 	for m in menus:
 		start += "<menu>\n" + \
-			"<id>" + m.getId() + "</id>\n" + \
-			"<typeId>" + m.getTypeId() + "</typeId>\n" + \
+			"<id>" + str(m.getId()) + "</id>\n" + \
+			"<typeId>" + str(m.getTypeId()) + "</typeId>\n" + \
 			"<name>" + m.getName() + "</name>\n" + \
 			"<pic>" + m.getPic() + "</pic>\n" + \
-			"<price>" + m.getPrice() + "</price>\n" + \
+			"<price>" + str(m.getPrice()) + "</price>\n" + \
 			"<remark>" + m.getRemark() + "</remark>\n" + \
 			"</menu>\n"
 

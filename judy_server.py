@@ -21,7 +21,7 @@ serv = { 'cgt': change_table,
 		'stb': start_table, 
 		'utb': union_table, 
 		'ut2': union_table2,
-		'pdt': update }
+		'upd': update }
 
 context = zmq.Context()
 socket = context.socket(zmq.REP)

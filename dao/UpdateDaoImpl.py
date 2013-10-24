@@ -22,12 +22,12 @@ class UpdateDaoImpl:
 			result = []
 			for row in rows:
 				# 获得菜单信息
-				Id     = row(0)
-				typeId = row(1)
-				price  = row(2)
-				name   = row(3)
-				pic    = row(4)
-				remark = row(5)
+				Id     = row[0]
+				typeId = row[1]
+				price  = row[2]
+				name   = row[3]
+				pic    = row[4]
+				remark = row[5]
 				
 				m = Menu()
 				m.setId(Id)

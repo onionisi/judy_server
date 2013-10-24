@@ -36,7 +36,7 @@ class UnionTableDaoImpl:
 		with self.conn:
 			cur = self.conn.cursor()
 
-			prepare = "call new_proc(%, %)"
+			prepare = "new_proc"
 			values = [ tableId1, tableId2 ]
 
 			cur.callproc(prepare, values)

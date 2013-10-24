@@ -128,6 +128,14 @@ def union_table2_test():
 	socket.send(request)
 	print socket.recv()
 
+# update menu
+def update_test():
+	print "upd test"
+
+	socket.send("upd")
+	print socket.recv()
+
+	return 0
 #req = start_table_test()
 #req = order_detail_test()
 #req = change_table_test()
@@ -136,7 +144,8 @@ def union_table2_test():
 #pay_test()
 #pay_money_test()
 #union_table_test()
-union_table2_test()
+#union_table2_test()
+update_test()
 
 ## send the request
 #socket.send(req)
