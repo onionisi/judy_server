@@ -1,0 +1,67 @@
+#!/usr/bin/env python2
+#
+# =====================================================================================
+#
+#       Filename:  launcher
+#
+#    Description:  launch judy server and serve for her!
+#
+#        Version:  1.0
+#        Created:  Wed Nov  6 10:57:06 CST 2013
+#       Revision:  none
+#       Compiler:  none
+#
+#         Author:  chong yang (onionisi), iamyangchong@gmail.com
+#        Company:  Sichuan Jiuzhou Electronic Technology Co.,Ltd
+#
+# =====================================================================================
+#
+
+import os, sys
+import database
+import judy_server
+
+db = database.Cook()
+
+proc_file = os.curdir + '/deploy/unite_proc.sql'
+def_table = os.curdir + '/deploy/table.data'
+def_menu = os.curdir + '/deploy/menu.data'
+
+def show_help():
+	print "Usage: launcher [options]"
+	print "create tables and start server"
+	print "options:  -h         usage messages"
+	print "          -m [file]  initial menu info"
+	print "          -t [file]  initial table info"
+	exit(12)
+
+
+def dep_detect():
+	if 0 != os.system("which mysqld > /dev/null"):
+		print "You need to install mysql !!!"
+		exit(13)
+
+	if 0 != os.system("which python2 > /dev/null"):
+		print "You need to install python2 !!!"
+		exit(14)
+
+
+argv = sys.argv
+if len(argv) > 1:
+	if "-h" == argv[1]:
+		show_help()
+	elif "-t" == argv[1]:
+		table = ((len(argv) == 3) and argv[2]) or def_table
+		db.table_init(table)
+	elif "-m" == argv[1]:
+		menu = ((len(argv) == 3) and argv[2]) or def_menu
+		db.menu_init(menu)
+else:
+	# detect env
+	dep_detect()
+	# create tables
+	db.table_create()
+	# create proc
+	db.procedure_create(proc_file)
+	# start server
+	judy_server.server_entry()

@@ -1,10 +1,13 @@
-What is this?
+神马玩意儿
 --------------
 
-This is a server for restaurant.
+此乃餐馆点餐系统的server，大名judy
 
 
-How to use it?
+如何上下其手
 ---------------
 
-In the deploy dirs(unfinish)
+环境：python2, mariadb, zmq
+其他信息参考launcher -h
+
+any others, just contract me. ;-)

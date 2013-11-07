@@ -1,21 +1,33 @@
 #coding=utf-8
 import MySQLdb
+import sys
 
-class db_init:
+class Cook:
 	def __init__(self, db_name='cook'):
 		self.con = MySQLdb.connect(host='localhost', user='root', passwd='')
 		self.cur = self.con.cursor()
 
 		# add database and use it
-		db_create = "create database if not exists " + db_name
-		self.cur.execute(db_create)
+		self.cur.execute("show databases")
+		dbs = self.cur.fetchall()
+
+		db_cur = db_name,
+		if not db_cur in dbs:
+			db_create = "create database if not exists " + db_name
+			self.cur.execute(db_create)
+
 		db_use = "use " + db_name
 		self.cur.execute(db_use)
 
 	def table_create(self):
 		with self.con:
+			self.cur.execute("show tables")
+			tables = self.cur.fetchall()
+
 			# create table: UserTbl
-			self.cur.execute("""create table if not exists UserTbl(
+			user = 'UserTbl',
+			if not user in tables: 
+				self.cur.execute("""create table if not exists UserTbl(
 									id int auto_increment,
 									account varchar(20), 
 									password varchar(20), 
@@ -30,7 +42,9 @@ class db_init:
 			#						name varchar(20), 
 			#						primary key(id))""")
 			# create table: TableTbl
-			self.cur.execute("""create table if not exists TableTbl(
+			table = 'TableTbl',
+			if not table in tables: 
+				self.cur.execute("""create table if not exists TableTbl(
 									id int auto_increment, 
 									num int, 
 									flag int, 
@@ -38,7 +52,9 @@ class db_init:
 									primary key(id))""")
 			# create table: MenuTbl -->foreign key(typeID)
 			# MenuTbl V2: delete foreign key typeID turn to char
-			self.cur.execute("""create table if not exists MenuTbl(
+			menu = 'MenuTbl',
+			if not menu in tables: 
+				self.cur.execute("""create table if not exists MenuTbl(
 									id int auto_increment, 
 									type varchar(20),
 									name varchar(50),
@@ -48,7 +64,9 @@ class db_init:
 									primary key(id))""")
 									#foreign key(typeID) references MenuTypeTbl(id))""")
 			# create table: OrderTbl -->forergn key(tableId)
-			self.cur.execute("""create table if not exists OrderTbl(
+			order = 'OrderTbl',
+			if not order in tables: 
+				self.cur.execute("""create table if not exists OrderTbl(
 									id int auto_increment, 
 									orderTime varchar(30), 
 									userId int,
@@ -59,7 +77,9 @@ class db_init:
 									primary key(id),
 									foreign key(tableId) references TableTbl(id))""")
 			# create table: OrderDetailTbl -->forergn key(orderId, menuId)
-			self.cur.execute("""create table if not exists OrderDetailTbl(
+			orderdetail = 'OrderDetailTbl',
+			if not orderdetail in tables: 
+				self.cur.execute("""create table if not exists OrderDetailTbl(
 									id int auto_increment, 
 									orderId int,
 									menuId int,
@@ -69,6 +89,18 @@ class db_init:
 									foreign key(orderId) references OrderTbl(id),
 									foreign key(menuId) references MenuTbl(id))""")
 		
+	# create procedures
+	def procedure_create(self, files):
+		with self.con:
+			self.cur.execute("select `name` from mysql.proc where db = 'cook' and `type` = 'PROCEDURE'")
+			procs = self.cur.fetchall()
+
+			# create proc: new_proc
+			new = 'new_proc',
+			if not new in procs: 
+				proc_line = open(files).read()
+				self.cur.execute(proc_line)
+
 	# init table
 	def table_init(self, num):
 		with self.con:
@@ -97,28 +129,32 @@ class db_init:
 	def menu_init(self, files):
 		with self.con:
 			# abandon old one
-			self.cur.execute("truncate table MenuTbl")
-	
+			self.cur.execute("""SET FOREIGN_KEY_CHECKS=0;
+								truncate MenuTbl;
+								SET FOREIGN_KEY_CHECKS=1;""")
+			# for error:"Commands out of sync; you can't run this command now"
+			self.cur.close()
+			cur = self.con.cursor()
+
+			lines = []
 			for line in open(files).readlines():
 				line_list = line.split()
 				line_list[1].decode('utf-8').encode(sys.getfilesystemencoding())
 				line_list.append('')
-				self.cur.execute("insert into table MenuTbl(type, name, price, remark) values(%s, %s, %s, %s)", line_list)
+				lines.append(line_list)
 
-	# init user
+			cur.executemany("insert into MenuTbl(type, name, price, remark) values(%s, %s, %s, %s)", lines)
+
+	# init user(not use this version)
 	def user_init(self):
 		with self.con:
-			#self.cur.execute("insert into table UserTbl(account, password, name,
+			#self.cur.execute("insert into UserTbl(account, password, name,
 			#		gender, permission, remark) values(%s, %s, %s, %s, %s, %s",
 			#		values)
 			values = ["admin", "admin", "onionisi"]
-			self.cur.execute("insert into table UserTbl(account, password, name) values(%s, %s, %s)", values)
+			self.cur.execute("insert into UserTbl(account, password, name) values(%s, %s, %s)", values)
 			pass
 
 	# init menu_type (should abandon!!!)
 	def menu_type_init(self, files):
 		pass
-
-
-db = db_init()
-db.table_create()

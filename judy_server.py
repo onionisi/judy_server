@@ -1,4 +1,6 @@
+#!/usr/bin/env python2
 #coding=utf-8
+
 import zmq
 import signal
 from servlet.ChangeTableServlet import *
@@ -32,17 +34,18 @@ def int_handler(signum, frame):
 	print "User interrupt"
 	exit()
 
-signal.signal(signal.SIGINT, int_handler)
-
-while True:
-    #  Wait for next request from client
-	msg = socket.recv()
-
-    #  Do real work
-	cmd = msg[:3]
-	handler = serv[cmd]
-	extra = msg[3:]
-	reply = handler(extra)
-
-    #  Send reply back to client
-	socket.send(str(reply))
+def server_entry():
+	signal.signal(signal.SIGINT, int_handler)
+	
+	while True:
+	    #  Wait for next request from client
+		msg = socket.recv()
+	
+	    #  Do real work
+		cmd = msg[:3]
+		handler = serv[cmd]
+		extra = msg[3:]
+		reply = handler(extra)
+	
+	    #  Send reply back to client
+		socket.send(str(reply))
