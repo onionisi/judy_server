@@ -1,6 +1,3 @@
--- Change DELIMITER TO // instead of ;
-DELIMITER //
-
 CREATE PROCEDURE `new_proc`(IN tableId1 INTEGER(11), IN tableId2 INTEGER(11)) NOT DETERMINISTIC SQL SECURITY DEFINER COMMENT 'This a proc for unit_table'
 BEGIN
 declare perNum,oId1,oId2 integer;
@@ -12,7 +9,3 @@ update OrderDetailTbl set orderId = oId2 where orderId = oId1;
 update TableTbl set flag = 0 where id = tableId1;
 delete from OrderTbl where id = oId1;
 END;
-//
-
-DELIMITER ;
--- Change delimiter back to ;
