@@ -29,7 +29,7 @@ def_menu = os.curdir + '/deploy/menu.data'
 
 def show_help():
 	print "Usage: launcher [options]"
-	print "create tables and start server"
+	print "create database tables and start server"
 	print "options:  -h         usage messages"
 	print "          -m [file]  initial menu info"
 	print "          -t [file]  initial table info"

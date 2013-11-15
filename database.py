@@ -105,7 +105,12 @@ class Cook:
 	def table_init(self, num):
 		with self.con:
 			# abandon old one
-			self.cur.execute("truncate table TableTbl")
+			self.cur.execute("""SET FOREIGN_KEY_CHECKS=0;
+								truncate TableTbl;
+								SET FOREIGN_KEY_CHECKS=1;""")
+			# for error:"Commands out of sync; you can't run this command now"
+			self.cur.close()
+			cur = self.con.cursor()
 
 			values = []
 			for i in range(1, num+1):
