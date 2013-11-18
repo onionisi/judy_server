@@ -1,6 +1,7 @@
 #coding=utf-8
 from DBUtil import *
 from entity.Menu import *
+from entity.Table import *
 
 class UpdateDaoImpl:
 
@@ -44,5 +45,30 @@ class UpdateDaoImpl:
 	
 	# 获得餐桌列表
 	def getTableList(self):
+		# 查询SQL语句
+		sql =" select id,num,description from TableTbl "
+
+		with self.conn:
+			cur = self.conn.cursor()
+
+			# 执行查询
+			cur.execute(sql)  
+			# 判断订单详细
+			rows = cur.fetchall()
+			result = []
+			for row in rows:
+				# 获得菜单信息
+				Id   = row[0]
+				num  = row[1]
+				desc = row[2]
+				
+				t = Table()
+				t.setId(Id)
+				t.setNum(num)
+				t.setDesc(desc)
+				
+				result.append(t)
+			
+			return result
 
 		return None
