@@ -11,7 +11,7 @@ class UpdateDaoImpl:
 	# 获得菜单列表
 	def getMenuList(self):
 		# 查询SQL语句
-		sql =" select id,typeId,price,name,pic,remark from MenuTbl "
+		sql =" select id,type,price,name,pic,remark from MenuTbl "
 
 		with self.conn:
 			cur = self.conn.cursor()

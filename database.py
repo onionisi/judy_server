@@ -106,8 +106,8 @@ class Cook:
         with self.con:
         	# abandon old one
             self.cur.execute("""SET FOREIGN_KEY_CHECKS=0;
-                                                    truncate TableTbl;
-                                                    SET FOREIGN_KEY_CHECKS=1;""")
+                                truncate TableTbl;
+                                SET FOREIGN_KEY_CHECKS=1;""")
             # for error:"Commands out of sync; you can't run this command now"
             self.cur.close()
             cur = self.con.cursor()
@@ -135,8 +135,8 @@ class Cook:
         with self.con:
             # abandon old one
             self.cur.execute("""SET FOREIGN_KEY_CHECKS=0;
-                                                    truncate MenuTbl;
-                                                    SET FOREIGN_KEY_CHECKS=1;""")
+                                truncate MenuTbl;
+                                SET FOREIGN_KEY_CHECKS=1;""")
             # for error:"Commands out of sync; you can't run this command now"
             self.cur.close()
             cur = self.con.cursor()
@@ -145,10 +145,9 @@ class Cook:
             for line in open(files).readlines():
                 line_list = line.split()
                 line_list[1].decode('utf-8').encode(sys.getfilesystemencoding())
-                line_list.append('')
                 lines.append(line_list)
 
-            cur.executemany("insert into MenuTbl(type, name, price, remark) values(%s, %s, %s, %s)", lines)
+            cur.executemany("insert into MenuTbl(type, name, price) values(%s, %s, %s)", lines)
 
     # init user(not use this version)
     def user_init(self):

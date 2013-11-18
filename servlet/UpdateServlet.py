@@ -20,9 +20,9 @@ def update(arg):
                 "<id>" + str(m.getId()) + "</id>\n" + \
                 "<typeId>" + str(m.getTypeId()) + "</typeId>\n" + \
                 "<name>" + m.getName() + "</name>\n" + \
-                "<pic>" + m.getPic() + "</pic>\n" + \
+                "<pic>" + str(m.getPic()) + "</pic>\n" + \
                 "<price>" + str(m.getPrice()) + "</price>\n" + \
-                "<remark>" + m.getRemark() + "</remark>\n" + \
+                "<remark>" + str(m.getRemark()) + "</remark>\n" + \
                 "</menu>\n"
 
     mend = "</menulist>\n"
@@ -33,7 +33,7 @@ def update(arg):
         tstart += "<table>\n" + \
                 "<id>" + str(t.getId()) + "</id>\n" + \
                 "<num>" + str(t.getNum()) + "</num>\n" + \
-                "<description>" + m.getDesc() + "</description>\n" + \
+                "<description>" + t.getDesc() + "</description>\n" + \
                 "</table>\n"
 
     tend = "</tablelist>\n"
