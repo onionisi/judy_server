@@ -26,51 +26,51 @@ class Cook:
 
             # create table: UserTbl
             user = 'UserTbl',
-            if not user in tables: 
+            if not user in tables:
                 self.cur.execute("""create table if not exists UserTbl(
                                                         id int auto_increment,
-                                                        account varchar(20), 
-                                                        password varchar(20), 
-                                                        name varchar(20), 
-                                                        gender varchar(20), 
-                                                        permission int, 
-                                                        remark varchar(200), 
+                                                        account varchar(20),
+                                                        password varchar(20),
+                                                        name varchar(20),
+                                                        gender varchar(20),
+                                                        permission int,
+                                                        remark varchar(200),
                                                         primary key(id))""")
             # create table: MenuTypeTbl
             #cur.execute("""create table if not exists MenuTypeTbl(
-            #						id int auto_increment, 
-            #						name varchar(20), 
+            #						id int auto_increment,
+            #						name varchar(20),
             #						primary key(id))""")
             # create table: TableTbl
             table = 'TableTbl',
-            if not table in tables: 
+            if not table in tables:
      	       self.cur.execute("""create table if not exists TableTbl(
-                                                        id int auto_increment, 
-                                                        num int, 
-                                                        flag int, 
+                                                        id int auto_increment,
+                                                        num int,
+                                                        flag int,
                                                         description varchar(100),
                                                         primary key(id))""")
             # create table: MenuTbl -->foreign key(typeID)
             # MenuTbl V2: delete foreign key typeID turn to char
             menu = 'MenuTbl',
-            if not menu in tables: 
+            if not menu in tables:
                 self.cur.execute("""create table if not exists MenuTbl(
-                                                        id int auto_increment, 
+                                                        id int auto_increment,
                                                         type varchar(20),
                                                         name varchar(50),
-                                                        price int, 
+                                                        price int,
                                                         pic varchar(100),
                                                         remark varchar(200),
                                                         primary key(id))""")
                                                         #foreign key(typeID) references MenuTypeTbl(id))""")
             # create table: OrderTbl -->forergn key(tableId)
             order = 'OrderTbl',
-            if not order in tables: 
+            if not order in tables:
                 self.cur.execute("""create table if not exists OrderTbl(
-                                                        id int auto_increment, 
-                                                        orderTime varchar(30), 
+                                                        id int auto_increment,
+                                                        orderTime varchar(30),
                                                         userId int,
-                                                        tableId int, 
+                                                        tableId int,
                                                         personNum int,
                                                         isPay int,
                                                         remark varchar(200),
@@ -78,9 +78,9 @@ class Cook:
                                                         foreign key(tableId) references TableTbl(id))""")
             # create table: OrderDetailTbl -->forergn key(orderId, menuId)
             orderdetail = 'OrderDetailTbl',
-            if not orderdetail in tables: 
+            if not orderdetail in tables:
                 self.cur.execute("""create table if not exists OrderDetailTbl(
-                                                        id int auto_increment, 
+                                                        id int auto_increment,
                                                         orderId int,
                                                         menuId int,
                                                         num int,
@@ -97,7 +97,7 @@ class Cook:
 
             # create proc: new_proc
             new = 'new_proc',
-            if not new in procs: 
+            if not new in procs:
                 proc_line = open(files).read()
                 self.cur.execute(proc_line)
 
@@ -114,7 +114,7 @@ class Cook:
 
             values = []
             for i in range(1, num+1):
-                values.append((i, 0, '1: occupied, 0: empty'))  
+                values.append((i, 0, '1: occupied, 0: empty'))
 
             self.cur.executemany("insert into TableTbl(num, flag, description) values(%s, %s, %s)", values)
 
@@ -126,7 +126,7 @@ class Cook:
 
             values = []
             for i in range(row[0]+1, row[0]+num+1):
-                values.append((i, 0, '1: occupied, 0: empty'))  
+                values.append((i, 0, '1: occupied, 0: empty'))
 
             self.cur.executemany("insert into TableTbl(num, flag, description) values(%s, %s, %s)", values)
 

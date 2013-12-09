@@ -13,6 +13,7 @@ from servlet.StartTableServlet import *
 from servlet.UnionTableServlet import *
 from servlet.UnionTableServlet2 import *
 from servlet.UpdateServlet import *
+from servlet.UpdateServlet2 import *
 
 serv = { 'cgt': change_table, 
         'ckt': check_table, 
@@ -23,7 +24,8 @@ serv = { 'cgt': change_table,
         'stb': start_table, 
         'utb': union_table, 
         'ut2': union_table2,
-        'upd': update }
+        'upm': update_menu,
+        'upt': update_table }
 
 context = zmq.Context()
 socket = context.socket(zmq.REP)
